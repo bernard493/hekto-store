@@ -1,4 +1,6 @@
-export {Navbar} from './Navbar/Navbar'
+export {NavbarComponent} from './NavbarComponent/NavbarComponent'
 export {Footer} from './Footer/Footer'
 export {Product} from './Product/Product'
 export {ProductDetail} from './Product/ProductDetail'
+export {CartProduct} from './Product/CartProduct'
+export {CheckOutProduct} from './Product/CheckOutProduct'

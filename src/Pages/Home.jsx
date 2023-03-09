@@ -1,15 +1,16 @@
 import React from 'react'
-import {Navbar,Footer,Product} from '../components/index'
-import {Hero, Blog ,DiscountItem} from '../sections/index'
+import {Hero, Blog ,DiscountItem, FeaturedProduct, ProductSection, Offer, Features} from '../sections/index'
 
 export const Home = () => {
   return (
-    <div className='px-[1rem] xl:px-[3rem]'>
-      <Navbar/>
+    <div className=''>
       <Hero/>
+      <FeaturedProduct/>
+      <ProductSection/>
+      <Offer/>
+      <Features/>
       <Blog/>
-      <DiscountItem/>
-      <Footer/>
+      
     </div>
   )
 }

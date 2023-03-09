@@ -1,18 +1,38 @@
-import React from "react";
-import {BrowserRouter , Routes , Route} from 'react-router-dom'
+import React, {useContext,useState, useMemo} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { ChakraProvider } from '@chakra-ui/react'
-import {Home,AboutUs,ContactUs} from './Pages/index'
+import { ProductDetailContext } from './Hooks/Context/ProductDetailContext';
+import {CartContextProvider} from './Hooks/Context/CartContext'
+import { Layout } from "./components/Layout/Layout";
+
+
+
 
 function App() {
+  const [productDetail ,setProductDetail ] = useState(null)
+
+  
+
+
+  const productData = useMemo( 
+    ()=>(
+      [productDetail ,setProductDetail ]
+      
+  )
+    ,[productDetail ,setProductDetail  ])
+
+
+
+  
+
   return (
     <ChakraProvider>
-        <BrowserRouter>
-            <Routes>
-              <Route exact path='/' element={<Home/>} />
-              <Route exact path='/aboutus' element={<AboutUs/>} />
-              <Route exact path='/contactus' element={<ContactUs/>} />
-            </Routes>
-        </BrowserRouter>     
+      <ProductDetailContext.Provider value={productData} >
+        <CartContextProvider>
+        <Layout/>
+        </CartContextProvider>
+      </ProductDetailContext.Provider>
+    
     </ChakraProvider>
 
   );

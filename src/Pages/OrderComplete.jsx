@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const OrderComplet = () => {
+export const OrderComplete = () => {
   return (
     <div>OrderComplet</div>
   )
