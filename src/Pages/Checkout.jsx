@@ -101,7 +101,9 @@ export const Checkout = () => {
 
   const isError = input === "";
 
- {/**get User Country and Billing country to find states/cites */}
+  {
+    /**get User Country and Billing country to find states/cites */
+  }
   useEffect(() => {
     const userCountry = watch().country;
     const userBillingCountry = watch().BillingCountry;
@@ -114,9 +116,10 @@ export const Checkout = () => {
     title: item.title,
   }));
 
-
- {/** calculate  product price */}
-  useMemo(() => { 
+  {
+    /** calculate  product price */
+  }
+  useMemo(() => {
     const price = cartItems.map((product) =>
       product.quantity > 1 ? product.price * product.quantity : product.price
     );
@@ -128,21 +131,29 @@ export const Checkout = () => {
     setTotalOrderAmount((prev) => totalItemPrice + tax + shippingCost);
   }, [cartItems, tax, totalItemPrice, shippingCost]);
 
-
-  {/** shipping cost ca */}
+  {
+    /** shipping cost ca */
+  }
   const getShippingCost = (shippingMethod) => {
     setSelectedShippingMethod(shippingMethod);
-    setShippingCost((prev) => (shippingMethod.price >= 0 ? Number(shippingMethod.price) : 0));
+    setShippingCost((prev) =>
+      shippingMethod.price >= 0 ? Number(shippingMethod.price) : 0
+    );
   };
 
-
-
-     {/** Placing Order */}
+  {
+    /** Placing Order */
+  }
   const onSubmit = (orderInformation) => {
     setProcessOrder(true);
     const newOrders = {
       ...orderInformation,
       orderId: generatedOrderId,
+      orderAmount:{
+        totalOrderAmount:totalOrderAmount,
+        taxAmount :tax,
+        subTotal:totalItemPrice
+      },
       orderStatus: "created",
       shippingMethod: selectedShippingMethod,
       product: cartItems,
@@ -151,8 +162,9 @@ export const Checkout = () => {
     localStorage.setItem("SET_CART_ITEMS", JSON.stringify([]));
   };
 
-
-  {/** updating database with newOrders */}
+  {
+    /** updating database with newOrders */
+  }
   useMemo(() => {
     if (ordersPlaced.length > 0) {
       localStorage.setItem("ORDER_PLACED", JSON.stringify(ordersPlaced));
@@ -161,26 +173,26 @@ export const Checkout = () => {
     }
   }, [ordersPlaced]);
 
-  
-
   return (
     <div>
       <div className="hidden md:grid grid-cols-2 gap-2 p-10 md:block ">
         <div>
-          <h3 className="text-xl font-bold">Order Overview</h3>
+          <h2 className="text-3xl text-center text-gray-700 font-bold md:text-4xl md:text-start md:w-[35rem]">
+            Checkout
+          </h2>
         </div>
         <div className="">{/* <Steps current={current} items={items} />*/}</div>
       </div>
-      <div className="text-center pt-3 md:hidden">
-        <h3 className="text-xl font-bold">Order Overview</h3>
+      <div className="text-center text-gray-700 pt-3 md:hidden">
+        <h3 className="text-xl  font-bold">Order Overview</h3>
       </div>
-      <div className="grid grid-rows-1 md:grid md:grid-cols-2 gap-4">
+      <div className="space-y-4 md:grid md:grid-cols-2 md:gap-4">
         <div className="mx-[2rem] md:mx-[5rem]">
           <div className="p-[1rem]">
             <h2 className="text-lg font-bold">Summary Order</h2>
             <p>Check our items and select shipping for better experience </p>
           </div>
-          <div className="p-4 flex items-center justify-center  bg-[#F8F9FA]  border-solid  border-2 border-F8F9FA-600 rounded-lg  mg:w-[35rem] ">
+          <div className="p-2 flex items-center justify-center  bg-[#F8F9FA]  border-solid  border-2 border-F8F9FA-600 rounded-lg  mg:w-[35rem] ">
             <ul role="list" className="my-2 divide-y divide-gray-200">
               {cartItems.map((product) => (
                 <CheckOutProduct
@@ -196,7 +208,7 @@ export const Checkout = () => {
             </ul>
           </div>
           <div className="pt-[1rem]">
-            <h3>Available Shipping Method</h3>
+            <h3 className="text-gray-700 font-bold">Available Shipping Method</h3>
             <div className="w-full px-4 ">
               <div className="mx-auto  max-w-md">
                 <RadioGroup
@@ -232,7 +244,7 @@ export const Checkout = () => {
                                 <div className="text-sm ">
                                   <RadioGroup.Label
                                     as="p"
-                                    className={`font-medium  ${
+                                    className={`  ${
                                       checked
                                         ? "text-white font-bold text-md"
                                         : "text-gray-900 font-bold text-md"
@@ -272,14 +284,15 @@ export const Checkout = () => {
           </div>
         </div>
 
-        <div className="bg-[#F9FAFB] p-[3rem] mb-6 mx-[1rem] md:mx-[5rem] sm:rounded-md">
+        <div className="bg-[#F9FAFB] p-[1rem] mb-6  md:mx-[5rem] sm:rounded-md">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="">
               <div className="py-2 space-y-2">
                 <h2 className="text-lg font-bold">Contact Information</h2>
 
-                <Stack spacing={0.5}>
-                  <FormLabel>Email Address</FormLabel>
+                <Stack spacing={0.8}>
+                <p className="text-md font-bold">Email Address</p>
+
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -322,7 +335,8 @@ export const Checkout = () => {
                 </Stack>
 
                 <Stack spacing={0.5}>
-                  <FormLabel>Address</FormLabel>
+                  <p className="text-md font-bold"> Address</p>
+
                   <InputGroup>
                     <Input
                       variant="outline"
@@ -333,7 +347,8 @@ export const Checkout = () => {
                 </Stack>
 
                 <Stack spacing={0.5}>
-                  <FormLabel>Apartment,suite,etc</FormLabel>
+                  <p className="text-md font-bold">Apartment,suite,etc</p>
+
                   <InputGroup>
                     <Input
                       variant="outline"
@@ -395,7 +410,8 @@ export const Checkout = () => {
                 </Stack>
 
                 <Stack spacing={0.5}>
-                  <FormLabel>Phone</FormLabel>
+                  <p className="text-md font-bold">Phone</p>
+
                   <InputGroup>
                     <Input
                       variant="outline"
@@ -430,7 +446,9 @@ export const Checkout = () => {
               </div>
               <div className="py-[1rem] space-y-4">
                 <Stack spacing={0.5}>
-                  <FormLabel>Card Number</FormLabel>
+                  <p className="text-md font-bold">Card Number</p>
+
+                  
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -463,7 +481,9 @@ export const Checkout = () => {
                 </Stack>
 
                 <Stack spacing={0.5}>
-                  <FormLabel>Card Holder</FormLabel>
+                  <p className="text-md font-bold">Card Holder</p>
+
+                  
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -485,9 +505,9 @@ export const Checkout = () => {
                   </InputGroup>
                 </Stack>
 
-                <FormLabel>Billing Address</FormLabel>
+                <p className="text-lg font-bold">Billing Address</p>
                 <Stack spacing={0.5} className="space-y-4">
-                  <FormLabel>Country</FormLabel>
+                <p className="text-md font-bold">Country</p>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -540,7 +560,7 @@ export const Checkout = () => {
             </div>
             <button
               type="submit"
-              className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 my-5 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+              className="flex items-center justify-center font-bold rounded-md border border-transparent bg-indigo-600 px-6 my-5 py-3 text-base  text-white shadow-sm hover:bg-indigo-700"
             >
               {processOrder ? (
                 <Loader size="sm" content="Placing Order ..." />

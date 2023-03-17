@@ -1,5 +1,5 @@
 {
-  "homepage" : "https://bernard493.github.io/hekto-store",
+  "homepage": "http://bernard493.github.io/hekto-store",
   "name": "hekto-store",
   "version": "0.1.0",
   "private": true,
@@ -22,11 +22,14 @@
     "react-datepicker": "^4.10.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.1",
+    "react-hot-toast": "^2.4.0",
     "react-icons": "^4.7.1",
     "react-multi-carousel": "^2.8.2",
     "react-router-dom": "^6.7.0",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
     "rsuite": "^5.25.0",
+    "slick-carousel": "^1.8.1",
     "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.4"
   },

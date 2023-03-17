@@ -13,9 +13,10 @@ export const CartContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getCartItems);
   const [cartItemsQuantity, setCartItemsQuantity] = useState([]);
   //const navigate = useNavigate();
-
+  
   useEffect(() => {
     localStorage.setItem("SET_CART_ITEMS", JSON.stringify(cartItems));
+    
   }, [cartItems]);
 
   const addToCart = (productId) => {

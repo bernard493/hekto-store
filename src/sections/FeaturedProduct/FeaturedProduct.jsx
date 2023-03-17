@@ -1,124 +1,154 @@
-import React, { useContext, useMemo } from 'react'
-import {useFetch} from '../../Hooks/useFetch'
-import Carousel from 'react-multi-carousel';
-import {BsFillCartCheckFill} from 'react-icons/bs'
-import {FaEye} from 'react-icons/fa'
-import heroImg from '../../asserts/image168.png'
-import 'react-multi-carousel/lib/styles.css';
-import { ProductDetailContext } from '../../Hooks/Context/ProductDetailContext';
-import {CartContext} from '../../Hooks/Context/CartContext'
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-
-
+import React, { useContext, useRef, useMemo } from "react";
+import { useFetch } from "../../Hooks/useFetch";
+import Slider from "react-slick";
+import { MdAddShoppingCart } from "react-icons/md";
+import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
+import heroImg from "../../asserts/image168.png";
+import "react-multi-carousel/lib/styles.css";
+import { ProductDetailContext } from "../../Hooks/Context/ProductDetailContext";
+import { CartContext } from "../../Hooks/Context/CartContext";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 1024 },
-    items: 5
+    items: 5,
   },
   desktop: {
     breakpoint: { max: 1024, min: 800 },
-    items: 3
+    items: 3,
   },
   tablet: {
     breakpoint: { max: 800, min: 464 },
-    items: 2
+    items: 2,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
+    items: 1,
+  },
 };
 
 export const FeaturedProduct = () => {
-    const [data ] = useFetch('https://dummyjson.com/products')
-    const [productDetails,setProductDetails] = useContext(ProductDetailContext)
-    const {cartItems,addToCart} = useContext(CartContext)
+  const [data] = useFetch("https://dummyjson.com/products");
+  const { addToCart } = useContext(CartContext);
+  const slider = useRef(null);
 
+  //console.log(productDetails)
 
-
-    
-  
-
-   function getCurrentProductDetails(currentProductId){
-    const currentProduct = data.filter(product => {
-      return product.id === currentProductId && product
-    })
-     console.log(currentProduct)
-     setProductDetails(prev => currentProduct)
-        
-   }
-    
-   
-   //console.log(productDetails)
-     
-  
-    return (
-      <div className='pt-[5rem]'>
-        <h3 className='text-center text-2xl font-mono font-bold rounded-md  md:text-3xl'>Featured Products</h3>
-        <div className=' py-[rem] md:px-[6rem]'>
-        <Carousel responsive={responsive}>
-                { data ? data.map(product => (
-               
-                 <div className='flex justify-center my-[2rem] px-3' key={product.id}> 
-                   <div className='bg-[#fff] h-[22rem] group  drop-shadow-md transition ease-in-out duration-300   hover:-translate-y-1 hover:scale-110  duration-300  w-[17rem] cursor-pointer  rounded-md '>
-                       <div className='relative flex justify-center bg-[#F6F7FB] hover:bg-[#F7F7F7]'>
-                         <img src={product.thumbnail} alt="" className='h-[12rem] p-3  drop-shadow-md  ' />
-                              <div className='absolute md:hidden group-hover:block  w-full h-full  pt-[1rem] '>
-                                <div className='flex space-x-1 ml-2'>
-                                    <button  className=' bg-[#fff] h-[2.1rem] w-[2rem] flex items-center justify-center rounded-md text-md  '
-                                    onClick={()=> addToCart(product.id)} > 
-                                        <BsFillCartCheckFill className=''/>
-                                        
-                                    </button>
-                                    <Link to={`shop/${product.id}`} > 
-                                      <button 
-                                      onClick={()=>(getCurrentProductDetails(product.id))}
-                                       className=' bg-[#fff] h-[2.1rem] w-[2rem] flex items-center justify-center rounded-md text-md  ' > 
-                                          
-                                          <FaEye/>
-                                      </button>
-                                    </Link>
-                                     
-                                </div>
-                                
-                               
-                              </div>
-                            
-                         
-                       </div>
-                       <div className=' pt-[1rem] mb-[2rem] text-center space-y-2 '>
-                         <h3 className='pb-[0.5rem] font-bold text-[#FB2E86] '>{product.title}</h3>
-                         <div className='flex justify-center space-x-1'>
-                             <div className='bg-[#05E6B7] h-[0.3rem] w-[1rem]'/>
-                             <div className='bg-[#FB2E86] h-[0.3rem] w-[1rem]'/>
-                             <div className='bg-[#00009D] h-[0.3rem] w-[1rem]'/>
-                         </div>
-                         <p className='text-sm'>Code - Y523201</p>
-                         <p className='text-sm'>${product.price}</p>
-                           
-                       </div>
-                       
-                        
-                  </div>
-             </div>
-           
-                  )):
-                  <button type="button" className="bg-indigo-500 ..." disabled>
-                  <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-                    
-                  </svg>
-                  Processing...
-                </button>
-
-                }
-      
-                
-      </Carousel>
-            
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    autoplay: true,
+    speed: 2000,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 420,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
+  };
+  return (
+    <div className="pt-[5rem]">
+      <h2 className="text-3xl text-center text-gray-700 font-bold md:text-4xl ">
+        Featured Product
+      </h2>
+      <div className=" py-[5rem]  md:px-[2rem] ">
+        <div className="flex justify-end items-center space-x-3 pb-4">
+          <button
+            onClick={() => slider?.current?.slickPrev()}
+            className=" py-3 px-3  md:py-3 md:px-3 text-center rounded-xl transition bg-gray-200 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 "
+          >
+            <BsArrowLeftShort className="block text-black font-semibold h-5 w-5" />
+          </button>
+          <button
+            onClick={() => slider?.current?.slickNext()}
+            className=" py-3 px-3  md:py-3 md:px-3 text-center rounded-xl transition bg-gray-200 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 "
+          >
+            <BsArrowRightShort className="text-black h-5 w-5" />
+          </button>
         </div>
+        {data ? (
+          <Slider ref={slider} {...settings}>
+            {data.map((product) => (
+              <div key={product.id} className="px-[1rem] md:px-[2rem] ">
+                <Link to={`shop/${product.id}`}>
+                  <div className="rounded-xl relative">
+                    <img
+                      src={product.images[0]}
+                      alt=""
+                      className="h-[10rem] w-full object-cover rounded-xl md:h-[18rem] "
+                    />
+                    <div className="h-[1.7rem] w-[3rem] bg-red-600  text-center rounded-lg absolute top-3 left-3">
+                      <p className="  text-[0.8rem] text-white  font-bold pt-1">
+                        SALE
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+
+                <div className="flex items-center justify-between py-3">
+                  <div className="space-y-1 md:space-y-2">
+                    <div>
+                      <Link to={`shop/${product.id}`}>
+                        <p className="text-md text-gray-700 w-[5rem] md:w-[12rem] font-bold md:text-lg">
+                          {product.title}
+                        </p>
+                      </Link>
+                    </div>
+                    <div className="flex items-end space-x-2 md:space-x-4">
+                      <p className="text-sm text-gray-800 font-extrabold md:text-lg">
+                        $
+                        {(
+                          product.price -
+                          (product.discountPercentage / 100) * product.price
+                        ).toFixed(2)}
+                      </p>
+                      <p className="text-[0.8rem] text-red-400 font-bold line-through md:text-md">
+                        ${product.price}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="">
+                    <button
+                      onClick={(e) => addToCart(product.id)}
+                      className=" py-3 px-3  md:py-3 md:px-3 text-center rounded-xl transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 "
+                    >
+                      <MdAddShoppingCart className="block text-white font-semibold md:h-5 md:w-5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          <h2>memmm</h2>
+        )}
       </div>
-    )
-}
+    </div>
+  );
+};

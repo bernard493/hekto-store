@@ -14,15 +14,15 @@ export const CheckOutProduct = ({ key, id, img, title, price, quantity }) => {
       <div className="ml-4 grid grid-rows-2  gap-y-10 text-sm ">
         <div className="grid grid-cols-2 gap-x-10 justify-between">
           <div>
-            <p className="w-[6rem]">{title}</p>
+            <p className="w-[6rem] text-gray-700 font-bold">{title}</p>
           </div>
           <div>
-            <p className="ml-4 ">$ {price}</p>
+            <p className="ml-4 font-bold text-gray-700">$ {price}</p>
           </div>
         </div>
         <div>
-          <p className="text-gray-500">
-            Qty <span className="font-bold">{quantity}</span>
+          <p className="text-gray-500 font-bold">
+            Qty: {quantity}
           </p>
         </div>
       </div>

@@ -21,7 +21,7 @@ export const Routers = () => {
     <Routes>
       <Route exact path="/" element={<Home />} />
       <Route exact path="/blogs" element={<Blogs />} />
-      <Route exact path="/blog" element={<BlogDetails />} />
+      <Route exact path="/blog-detail/:id" element={<BlogDetails />} />
       <Route exact path="/cart" element={<CartPage />} />
       <Route exact path="/order" element={<OrderComplete />} />
       <Route exact path="/faq" element={<Faq />} />

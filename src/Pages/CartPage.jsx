@@ -4,6 +4,7 @@ import { CartProduct } from "../components";
 import { CartContext } from "../Hooks/Context/CartContext";
 import { Link, useNavigate } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
+import toast, { Toaster } from "react-hot-toast";
 
 export const CartPage = () => {
   const { cartItems, removeFromCart, setCartItems } = useContext(CartContext);
@@ -24,21 +25,15 @@ export const CartPage = () => {
     setTotalOrderAmount((prev) => totalItemPrice + tax);
   }, [cartItems, tax, totalItemPrice]);
 
-  const navigateToCheckout = () => {
-    navigate("/checkout");
-  };
+  const removeFromCartToaster = () =>
+    toast.success("Removed from Cart Successfully");
 
   return (
     <div className=" ">
-      <div className="bg-[#F1F0FF] h-[10rem] flex justify-start items-center ">
-        <div className="ml-10">
-          
-        </div>
-        <div className=" lg:text-start">
-          <h1 className="text-xl font-mono font-bold pl-[1rem] pt-[5rem] lg:pl-[10rem] ">
-            Shopping Cart
-          </h1>
-        </div>
+      <div className=" lg:text-start">
+        <h2 className="text-3xl text-center text-gray-700 font-bold md:text-4xl md:text-start md:w-[35rem]">
+          Cart
+        </h2>
       </div>
       <div className="space-y-10 px-[1rem]   lg:grid grid-cols-2 gap-10 lg:px-[10rem] ">
         <div className="m-8">
@@ -49,6 +44,7 @@ export const CartPage = () => {
                   <CartProduct
                     id={product.id}
                     img={product.thumbnail}
+                    removeFromCartToaster={removeFromCartToaster}
                     title={product.title}
                     price={product.price}
                     quantity={product.quantity}
@@ -62,7 +58,7 @@ export const CartPage = () => {
           </div>
         </div>
         <div className="bg-[#F9FAFC] h-[26rem] my-5 p-3">
-          <h2 className="text-lg font-mono font-bold ">Order Summary</h2>
+          <h2 className="text-lg text-gray-700 font-bold ">Order Summary</h2>
           <div className="py-5 space-y-5">
             <div className="flex justify-between items-center border-b-2">
               <p className="text-md font-bold">Subtotal</p>
@@ -76,15 +72,19 @@ export const CartPage = () => {
               <p className="text-md font-bold">Order total</p>
               <p className="font-bold">${totalOrderAmount}</p>
             </div>
-            <p className="text-[0.8rem]">Shipping is calculated at checkout.</p>
+            <p className="text-[0.8rem] text-gray-400 font-bold">
+              Shipping is calculated at checkout.
+            </p>
           </div>
-          <Link to='/checkout'
-            className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+          <Link
+            to="/checkout"
+            className="flex items-center text-white font-bold justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base  shadow-sm hover:bg-indigo-700"
           >
             Checkout
           </Link>
         </div>
       </div>
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 };

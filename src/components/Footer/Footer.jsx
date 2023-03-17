@@ -1,79 +1,91 @@
-import React from 'react'
-import logo from '../../asserts/Hekto.png'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
+import React, { useEffect, useState } from "react";
+import logo from "../../asserts/Hekto.png";
+import cardPayment from '../../asserts/cardpayment.png'
+import { Link } from "react-router-dom";
+import { BiCopyright } from "react-icons/bi";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
 export const Footer = () => {
+  const [getCurrentYear, setGetCurrentYear] = useState(null);
+
+  useEffect(() => {
+    const year = new Date().getFullYear();
+    setGetCurrentYear(year)
+  }, []);
+
   return (
-    <div className='bg-[#F1F0FF] '>
-             <div className="grid grid-cols gap-y-10 gap-x-6 px-[10rem] py-[3rem] justify-center text-center  xl:grid-cols-4 xl:gap-x-10">
-              <div className='space-y-5'>
-                <img src={logo} alt="" />
-                  <InputGroup className="mb-3">
-                        <Form.Control
-                          placeholder="Enter Email Address"
-                          aria-label="Enter Email Address"
-                          aria-describedby="basic-addon2"
-                        />
-                        <Button variant="secondary"  id="button-addon2">
-                          Sign Up
-                        </Button>
-                    </InputGroup>
-                    <div>
-                    <p>Address</p>
-                    <p className='text-sm'>17 Princess Road, London, Greater London NW1 8JR, UK</p>  
-                    </div>
-                                  
-              </div>
-              <div className='space-y-6'>
-                <div>
-                  <h2 className="text-xl font-bold font-mono">Catagories</h2>
-                </div>
-                <div className=''>
-                  <ul className='space-y-2'>
-                    <li><a href="" className='text-sm'>Laptops & Computers</a></li>
-                    <li><a href="" className='text-sm'>Cameras & Photography</a></li>
-                    <li><a href="" className='text-sm'>Smart Phones & Tablets</a></li>
-                    <li><a href="" className='text-sm'>Video Games & Consoles</a></li>
-                    <li><a href="" className='text-sm'>Waterproof Headphones</a></li>
-                  </ul>
-                </div>
-
-              </div>
-              <div className='space-y-6'>
-                <div>
-                  <h2 className="text-xl font-bold font-mono">Catagories</h2>
-                </div>
-                <div className=''>
-                  <ul className='space-y-2'>
-                    <li><a href="" className='text-sm'>Laptops & Computers</a></li>
-                    <li><a href="" className='text-sm'>Cameras & Photography</a></li>
-                    <li><a href="" className='text-sm'>Smart Phones & Tablets</a></li>
-                    <li><a href="" className='text-sm'>Video Games & Consoles</a></li>
-                    <li><a href="" className='text-sm'>Waterproof Headphones</a></li>
-                  </ul>
-                </div>
-
-              </div>
-              <div className='space-y-6'>
-                <div>
-                  <h2 className="text-xl font-bold font-mono">Catagories</h2>
-                </div>
-                <div className=''>
-                  <ul className='space-y-2'>
-                    <li><a href="" className='text-sm'>Laptops & Computers</a></li>
-                    <li><a href="" className='text-sm'>Cameras & Photography</a></li>
-                    <li><a href="" className='text-sm'>Smart Phones & Tablets</a></li>
-                    <li><a href="" className='text-sm'>Video Games & Consoles</a></li>
-                    <li><a href="" className='text-sm'>Waterproof Headphones</a></li>
-                  </ul>
-                </div>
-
-              </div>
-
-            </div>
-      
+    <div className="bg-[#E5E7EB] p-[2rem] md:pt-[3rem] md:px-[5rem]">
+      <div className="space-y-5 md:grid md:grid-cols-6 md:gap-4">
+        <div class=" space-y-5 col-span-2">
+          <div className="flex justify-center md:justify-start">
+            <img src={logo} alt="" className="" />
+          </div>
+          <div className="md:w-[20rem]">
+            <p className="text-[1rem]  font-bold  md:text-start  md:text-[0.9rem]    text-gray-400">
+              Specializes in providing hight-quality, stylish products for your
+              wardrobe
+            </p>
+          </div>
+        </div>
+        <div className="space-y-2 text-center md:text-start">
+          <h3 className="text-[1.2rem] font-bold  text-gray-800">SHOP</h3>
+          <ul className="space-y-2 text-[1rem]   font-bold md:text-md    text-gray-400 md:text-[0.9rem] ">
+            <li>
+              <Link>All Collections</Link>
+            </li>
+            <li>
+              <Link>Winter Edition</Link>
+            </li>
+            <li>
+              <Link>Discount</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="space-y-2 text-center md:text-start">
+          <h3 className="font-bold text-[1.2rem] text-gray-800">COMPANY</h3>
+          <ul className="space-y-2 text-[1rem]   font-bold md:text-md    text-gray-400 md:text-[0.9rem] ">
+            <li>
+              <Link>About Us</Link>
+            </li>
+            <li>
+              <Link>Contact</Link>
+            </li>
+            <li>
+              <Link>Affiliates</Link>
+            </li>
+          </ul>{" "}
+        </div>
+        <div className="space-y-2 ">
+          <h3 className="font-bold text-[1.2rem] text-center  text-gray-800">SUPPORT</h3>
+          <ul className="space-y-2 text-[1rem] text-center  md:text-left   font-bold md:text-md    text-gray-400 md:text-[0.9rem] ">
+            <li>
+              <Link>FAQs</Link>
+            </li>
+            <li>
+              <Link>Cookies Policy</Link>
+            </li>
+            <li>
+              <Link>Terms of Use</Link>
+            </li>
+          </ul>{" "}
+        </div>
+        <div className="space-y-2  text-center md:text-start">
+          <h3 className="font-bold text-[1.2rem] text-gray-800">
+            PAYMENT METHODS
+          </h3>
+          <div className="flex justify-center md:justify-start">
+            <img src={cardPayment} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className="pt-[3rem] space-y-9">
+        <div className=" flx justify-center border-t-2 border-gray-300 " />
+        <p className="text-[1rem] text-center   font-bold md:text-md    text-gray-400 md:text-[0.9rem] ">
+          Copyright ©{getCurrentYear} Bernard. All right reserved
+        </p>
+      </div>
     </div>
-  )
-}
+  );
+};

@@ -1,15 +1,17 @@
-import React from 'react'
-import { Routers } from '../../Routers/Routers'
-import { NavbarComponent  , Footer} from "../index";
+import React from "react";
+import { Routers } from "../../Routers/Routers";
+import { NavbarComponent, Footer } from "../index";
 
-export const  Layout = () => {
+export const Layout = () => {
   return (
-    <>
-    <NavbarComponent/>
+    <div className="font-Poppins">
+      <div className="mx-[1rem] md:mx-[3rem] ">
+        <NavbarComponent />
         <div>
-        <Routers/>
+          <Routers />
         </div>
-    <Footer/>
-    </>
-  )
-}
+      </div>
+      <Footer />
+    </div>
+  );
+};
