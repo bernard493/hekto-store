@@ -124,7 +124,7 @@ export const NavbarComponent = () => {
       <div className="hidden md:block">
         <div className="flex items-center justify-between py-[2.5rem]">
           <div className="">
-            <Link to="/">
+            <Link to="/hekto-store">
               <img src={logo} alt="" />
             </Link>
           </div>

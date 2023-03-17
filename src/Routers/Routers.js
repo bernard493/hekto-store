@@ -19,7 +19,7 @@ import {
 export const Routers = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<Home />} />
+      <Route exact path="/hekto-store" element={<Home />} />
       <Route exact path="/blogs" element={<Blogs />} />
       <Route exact path="/blog-detail/:id" element={<BlogDetails />} />
       <Route exact path="/cart" element={<CartPage />} />
