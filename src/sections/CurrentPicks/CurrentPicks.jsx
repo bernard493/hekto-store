@@ -45,14 +45,14 @@ const CardComponent = ({ cardImg, path, pathName }) => {
       to={`shop/`}
         type="button"
         title="Start buying"
-        className="w-[10rem] my-2 py-2 px-6 text-center xl:absolute   xl:w-[13rem] rounded-xl xl:top-[12rem] left-9 transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 "
+        className="w-[8rem] flex justify-center my-2 py-1 px-6 text-center xl:absolute   xl:w-[13rem] rounded-xl xl:top-[12rem] left-9 transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 "
       >
-        <div className="flex items-center justify-between ">
+        <button className="flex items-center justify-between ">
           <span className="block text-[0.8rem]  text-white font-semibold">
             {pathName}
           </span>
           <BsArrowRightShort className="text-white h-8 w-8" />
-        </div>
+        </button>
       </Link>
     </div>
   );
