@@ -42,7 +42,7 @@ const CardComponent = ({ cardImg, path, pathName }) => {
       </div>
       <Link
       
-        to={'#' /**`shop/${path} */}
+      to={`shop/`}
         type="button"
         title="Start buying"
         className="w-[10rem] my-2 py-2 px-6 text-center xl:absolute   xl:w-[13rem] rounded-xl xl:top-[12rem] left-9 transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 "

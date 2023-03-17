@@ -20,7 +20,7 @@ export const NavbarComponent = () => {
   const menuLinks = [
     {
       page: "Shop",
-      path: "/shop",
+      path: "hekto-store/shop/",
       icon: IconOne,
     },
     {
