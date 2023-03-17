@@ -15,7 +15,7 @@ export const BlogCard = ({postImg,tittle,text,id}) => {
           loading="lazy"
           width="1000"
           height="667"
-          class="h-40 w-full object-cover object-top transition duration-500 group-hover:scale-105"
+          className="h-40 w-full object-cover object-top transition duration-500 group-hover:scale-105"
         />
       </div>
       <div className="mt-6 relative">

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
-import { BlogCard } from "../../components";
+import { BlogCard, Product } from "../../components";
 import Slider from "react-slick";
 
 const post = [
@@ -78,7 +78,7 @@ export const Blog = () => {
         },
       },
       {
-        breakpoint: 420,
+        breakpoint: 520,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -109,7 +109,7 @@ export const Blog = () => {
         </div>
         <Slider ref={slider} {...settings}>
           {post.map((postDetail) => (
-            <div className="px-[1rem] md:px-[2rem]">
+            <div key={postDetail.id} className="px-[1rem] md:px-[2rem]">
               <BlogCard
                 id={postDetail.id}
                 postImg={postDetail.postImg}

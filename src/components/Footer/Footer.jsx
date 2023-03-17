@@ -18,7 +18,7 @@ export const Footer = () => {
   return (
     <div className="bg-[#E5E7EB] p-[2rem] md:pt-[3rem] md:px-[5rem]">
       <div className="space-y-5 md:grid md:grid-cols-6 md:gap-4">
-        <div class=" space-y-5 col-span-2">
+        <div className=" space-y-5 col-span-2">
           <div className="flex justify-center md:justify-start">
             <img src={logo} alt="" className="" />
           </div>

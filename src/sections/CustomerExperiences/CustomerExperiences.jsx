@@ -61,6 +61,7 @@ export const CustomerExperiences = () => {
       <div className="grid grid-cols-2 gap-4   xl:px-[5rem] py-[3rem] xl:flex flex-row justify-between md:space-x-8">
         {experienceOffers.map((offerItem) => (
           <Offers
+          key={offerItem.text}
             icon={offerItem.icon}
             tittle={offerItem.tittle}
             text={offerItem.text}
