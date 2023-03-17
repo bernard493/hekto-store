@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/hekto-store/static/css/main.c04963e2.css",
-    "main.js": "/hekto-store/static/js/main.e3de4a68.js",
+    "main.css": "/hekto-store/static/css/main.22e7bbe2.css",
+    "main.js": "/hekto-store/static/js/main.cea5b1b1.js",
     "static/media/store-906722_1920.jpg": "/hekto-store/static/media/store-906722_1920.5aa346b72dccab3afcef.jpg",
+    "static/media/man-1866574_1920.jpg": "/hekto-store/static/media/man-1866574_1920.bc777b17645b64f8c088.jpg",
     "static/media/sofa.png": "/hekto-store/static/media/sofa.fa3115a445e097b3a4db.png",
-    "static/media/Group153.png": "/hekto-store/static/media/Group153.4a5d1f8a8619565e6951.png",
     "static/media/image168.png": "/hekto-store/static/media/image168.e5c6827ba613be5193a7.png",
     "static/media/revicons.eot": "/hekto-store/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/hekto-store/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/hekto-store/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/hekto-store/index.html",
-    "main.c04963e2.css.map": "/hekto-store/static/css/main.c04963e2.css.map",
-    "main.e3de4a68.js.map": "/hekto-store/static/js/main.e3de4a68.js.map"
+    "main.22e7bbe2.css.map": "/hekto-store/static/css/main.22e7bbe2.css.map",
+    "main.cea5b1b1.js.map": "/hekto-store/static/js/main.cea5b1b1.js.map"
   },
   "entrypoints": [
-    "static/css/main.c04963e2.css",
-    "static/js/main.e3de4a68.js"
+    "static/css/main.22e7bbe2.css",
+    "static/js/main.cea5b1b1.js"
   ]
 }
