@@ -1,6 +1,4 @@
 import React, { useContext, useEffect, useState, useMemo } from "react";
-import { Button, message, Steps, theme } from "antd";
-import { CartContext } from "../Hooks/Context/CartContext";
 import { CheckOutProduct } from "../components";
 import { RadioGroup } from "@headlessui/react";
 import { MdAlternateEmail } from "react-icons/md";
@@ -10,20 +8,15 @@ import { CgProfile } from "react-icons/cg";
 import { MdPayment } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import { v4 as uuid } from "uuid";
-import { Radio, Form, Loader } from "rsuite";
-import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import {  Loader } from "rsuite";
+import {  useNavigate } from "react-router-dom";
 import {
   Input,
   Stack,
   InputGroup,
   InputLeftElement,
   InputRightElement,
-  FormLabel,
   Select,
-  FormControl,
-  FormHelperText,
-  FormErrorMessage,
 } from "@chakra-ui/react";
 
 const plans = [
@@ -149,10 +142,10 @@ export const Checkout = () => {
     const newOrders = {
       ...orderInformation,
       orderId: generatedOrderId,
-      orderAmount:{
-        totalOrderAmount:totalOrderAmount,
-        taxAmount :tax,
-        subTotal:totalItemPrice
+      orderAmount: {
+        totalOrderAmount: totalOrderAmount,
+        taxAmount: tax,
+        subTotal: totalItemPrice,
       },
       orderStatus: "created",
       shippingMethod: selectedShippingMethod,
@@ -208,7 +201,9 @@ export const Checkout = () => {
             </ul>
           </div>
           <div className="pt-[1rem]">
-            <h3 className="text-gray-700 font-bold">Available Shipping Method</h3>
+            <h3 className="text-gray-700 font-bold">
+              Available Shipping Method
+            </h3>
             <div className="w-full px-4 ">
               <div className="mx-auto  max-w-md">
                 <RadioGroup
@@ -291,7 +286,7 @@ export const Checkout = () => {
                 <h2 className="text-lg font-bold">Contact Information</h2>
 
                 <Stack spacing={0.8}>
-                <p className="text-md font-bold">Email Address</p>
+                  <p className="text-md font-bold">Email Address</p>
 
                   <InputGroup>
                     <InputLeftElement
@@ -448,7 +443,6 @@ export const Checkout = () => {
                 <Stack spacing={0.5}>
                   <p className="text-md font-bold">Card Number</p>
 
-                  
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -483,7 +477,6 @@ export const Checkout = () => {
                 <Stack spacing={0.5}>
                   <p className="text-md font-bold">Card Holder</p>
 
-                  
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -507,7 +500,7 @@ export const Checkout = () => {
 
                 <p className="text-lg font-bold">Billing Address</p>
                 <Stack spacing={0.5} className="space-y-4">
-                <p className="text-md font-bold">Country</p>
+                  <p className="text-md font-bold">Country</p>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"

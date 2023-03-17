@@ -13,7 +13,6 @@ export const ThankYouPage = () => {
     setProducts((prev) => getProducts[0]);
   }, []);
 
-  console.log(orderedItems);
   const { address, apartment, city, State, ZipCode, FirstName, LastName } =
     orderedItems[0];
   const { totalOrderAmount, taxAmount, subTotal } = orderedItems[0].orderAmount;

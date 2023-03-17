@@ -1,4 +1,4 @@
-import React, { useContext, useState, useMemo } from "react";
+import React, {  useState, useMemo } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { ProductDetailContext } from "./Hooks/Context/ProductDetailContext";

@@ -1,17 +1,15 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState } from "react";
 import { useContext } from "react";
 import { CartProduct } from "../components";
 import { CartContext } from "../Hooks/Context/CartContext";
-import { Link, useNavigate } from "react-router-dom";
-import { BiArrowBack } from "react-icons/bi";
+import { Link,  } from "react-router-dom"
 import toast, { Toaster } from "react-hot-toast";
 
 export const CartPage = () => {
-  const { cartItems, removeFromCart, setCartItems } = useContext(CartContext);
+  const { cartItems, removeFromCart } = useContext(CartContext);
   const [totalItemPrice, setTotalItemPrice] = useState(0);
   const [tax, setTax] = useState(20);
   const [totalOrderAmount, setTotalOrderAmount] = useState(0);
-  const navigate = useNavigate();
 
   useMemo(() => {
     const price = cartItems.map((product) =>

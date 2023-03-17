@@ -1,5 +1,4 @@
 import React from "react";
-import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import moneyIcon from '../../asserts/googleIcons/currency_exchange_FILL0_wght400_GRAD0_opsz48.png'
 import GuardIcon from '../../asserts/googleIcons/verified_user_FILL0_wght400_GRAD0_opsz48.png'
 import arrivalIcon from '../../asserts/googleIcons/all_inbox_FILL0_wght400_GRAD0_opsz48.png'

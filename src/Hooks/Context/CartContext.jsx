@@ -1,8 +1,6 @@
 import React, { createContext, useEffect } from "react";
-import { useMemo } from "react";
 import { useState } from "react";
 import { useFetch } from "../../Hooks/useFetch";
-import { useNavigate } from "react-router-dom";
 
 export const CartContext = createContext(null);
 
@@ -42,7 +40,7 @@ export const CartContextProvider = (props) => {
   const handleProductQuantity = (id, value) => {
     setCartItems((prev) =>
       prev.map((product) =>
-        product.id == id
+        product.id === id
           ? {
               ...product,
               quantity: Number(value),
