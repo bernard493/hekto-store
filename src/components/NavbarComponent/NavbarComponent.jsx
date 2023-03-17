@@ -148,7 +148,7 @@ export const NavbarComponent = () => {
             </div>
             <div className=" flex items-center space-x-5">
               <div className="">
-                <Link to="/cart">
+                <Link to="hekto-store/cart">
                   <Badge color="green" content={cartItems.length}>
                     <img src={CartIcon} alt="cartIcon" className="h-6 w-6" />
                   </Badge>
@@ -189,13 +189,13 @@ export const NavbarComponent = () => {
             </Popover>
           </div>
           <div className="">
-            <Link to="/">
+            <Link to="/hekto-store">
               <img src={logo} alt="" />
             </Link>
           </div>
           <div className=" flex items-center space-x-5">
             <div className="">
-              <Link to="/cart">
+              <Link to="hekto-store/cart">
                 <Badge color="green" content={cartItems.length}>
                   <img src={CartIcon} alt="cartIcon" className="h-6 w-6" />
                 </Badge>

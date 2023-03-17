@@ -2,21 +2,23 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import thankYouImg from "../asserts/store-906722_1920.jpg";
 
+
+const getOrders = JSON.parse(localStorage.getItem("ORDER_PLACED"));
+    
+
+
 export const ThankYouPage = () => {
-  const [orderedItems, setOrderedItems] = useState([]);
+  const [orderedItems, setOrderedItems] = useState(getOrders);
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
-    const getOrders = JSON.parse(localStorage.getItem("ORDER_PLACED"));
-    setOrderedItems((prev) => getOrders);
     const getProducts = getOrders.map((order) => order.product);
     setProducts((prev) => getProducts[0]);
   }, []);
 
-  const { address, apartment, city, State, ZipCode, FirstName, LastName } =
-    orderedItems[0];
+  const { address, apartment, city, State, ZipCode, FirstName, LastName } = orderedItems[0];
   const { totalOrderAmount, taxAmount, subTotal } = orderedItems[0].orderAmount;
-
+ console.log(orderedItems)
   return (
     <div className="mx-3 ">
       <h2 className="text-2xl text-center my-3 font-bold md:text-start">
@@ -107,10 +109,12 @@ export const ThankYouPage = () => {
               </div>
               <div className="">
                 <p className="font-bold text-gray-800 text-[1rem]">
-                 Payment Information
+                  Payment Information
                 </p>
                 <p className="font-bold text-[0.8rem] ">Ending with 4567 </p>
-                <p className="font-bold text-[0.8rem] text-gray-500">Expires 12/27 </p>
+                <p className="font-bold text-[0.8rem] text-gray-500">
+                  Expires 12/27{" "}
+                </p>
               </div>
             </div>
           </div>

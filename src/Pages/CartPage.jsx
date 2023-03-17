@@ -34,12 +34,13 @@ export const CartPage = () => {
         </h2>
       </div>
       <div className="space-y-10 px-[1rem]   lg:grid grid-cols-2 gap-10 lg:px-[10rem] ">
-        <div className="m-8">
+        <div className="my-8">
           <div className="flow-root">
             <ul role="list" className="-my-6 divide-y divide-gray-200">
               {cartItems.length > 0 ? (
                 cartItems.map((product) => (
                   <CartProduct
+                  key={product.id}
                     id={product.id}
                     img={product.thumbnail}
                     removeFromCartToaster={removeFromCartToaster}
@@ -75,7 +76,7 @@ export const CartPage = () => {
             </p>
           </div>
           <Link
-            to="/checkout"
+            to="/hekto-store/checkout"
             className="flex items-center text-white font-bold justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base  shadow-sm hover:bg-indigo-700"
           >
             Checkout

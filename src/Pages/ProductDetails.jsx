@@ -82,7 +82,6 @@ export const ProductDetails = () => {
       .then((currentProduct) => setProductDetail((prev) => [currentProduct]));
   }, []);
 
-  console.log(productDetail);
 
   return (
     <>

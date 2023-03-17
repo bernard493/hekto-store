@@ -164,7 +164,7 @@ export const Checkout = () => {
   useMemo(() => {
     if (ordersPlaced.length > 0) {
       localStorage.setItem("ORDER_PLACED", JSON.stringify(ordersPlaced));
-      navigate("/Thank-You-Page");
+      navigate("hekto-store/Thank-You-Page");
       setProcessOrder(false);
     }
   }, [ordersPlaced]);

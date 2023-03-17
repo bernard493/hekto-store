@@ -1,8 +1,8 @@
 import React from "react";
 
-export const CheckOutProduct = ({ key, id, img, title, price, quantity }) => {
+export const CheckOutProduct = ({  id, img, title, price, quantity }) => {
   return (
-    <li key={key} className="flex py-2">
+    <li key={id} className="flex py-2">
       <div className="h-20 w-20 lg:h-24 lg:w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
         <img
           src={img}
