@@ -18,7 +18,6 @@ export const ThankYouPage = () => {
 
   const { address, apartment, city, State, ZipCode, FirstName, LastName } = orderedItems[0];
   const { totalOrderAmount, taxAmount, subTotal } = orderedItems[0].orderAmount;
- console.log(orderedItems)
   return (
     <div className="mx-3 ">
       <h2 className="text-2xl text-center my-3 font-bold md:text-start">
