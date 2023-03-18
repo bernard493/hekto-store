@@ -8,6 +8,7 @@ import "react-multi-carousel/lib/styles.css";
 import { ProductDetailContext } from "../../Hooks/Context/ProductDetailContext";
 import { CartContext } from "../../Hooks/Context/CartContext";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const responsive = {
@@ -34,6 +35,7 @@ export const FeaturedProduct = () => {
   const [data] = useFetch("https://dummyjson.com/products");
   const { addToCart } = useContext(CartContext);
   const slider = useRef(null);
+  const addToCartToaster = () => toast.success('Added to Cart Successfully');
 
   //console.log(productDetails)
 
@@ -72,6 +74,16 @@ export const FeaturedProduct = () => {
       },
     ],
   };
+
+
+  
+  const handleAddToCart = (id) => {
+    addToCart(id);
+    addToCartToaster()
+  };
+
+
+
   return (
     <div className="pt-[5rem]">
       <h2 className="text-3xl text-center text-gray-700 font-bold md:text-4xl ">
@@ -96,7 +108,7 @@ export const FeaturedProduct = () => {
           <Slider ref={slider} {...settings}>
             {data.map((product) => (
               <div key={product.id} className="px-[1rem] md:px-[2rem] ">
-                <Link to={`shop/${product.id}`}>
+                <Link to={`/shop/${product.id}`}>
                   <div className="rounded-xl relative">
                     <img
                       src={product.images[0]}
@@ -114,8 +126,8 @@ export const FeaturedProduct = () => {
                 <div className="flex items-center justify-between py-3">
                   <div className="space-y-1 md:space-y-2">
                     <div>
-                      <Link to={`shop/${product.id}`}>
-                        <p className="text-md text-gray-700 w-[5rem] md:w-[12rem] font-bold md:text-lg">
+                      <Link to={`shop/${product.id}`} className='hover:no-underline'>
+                        <p className="text-md text-gray-700 w-[5rem] md:w-[12rem] font-bold md:text-lg hover:text-gray-500">
                           {product.title}
                         </p>
                       </Link>
@@ -135,7 +147,7 @@ export const FeaturedProduct = () => {
                   </div>
                   <div className="">
                     <button
-                      onClick={(e) => addToCart(product.id)}
+                      onClick={(e)=>handleAddToCart(product.id)}
                       className=" py-3 px-3  md:py-3 md:px-3 text-center rounded-xl transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 "
                     >
                       <MdAddShoppingCart className="block text-white font-semibold md:h-5 md:w-5" />
@@ -149,6 +161,8 @@ export const FeaturedProduct = () => {
           <h2>memmm</h2>
         )}
       </div>
+      <Toaster position="top-right" reverseOrder={false} />
+
     </div>
   );
 };

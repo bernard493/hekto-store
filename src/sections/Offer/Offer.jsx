@@ -23,11 +23,11 @@ export const Offer = () => {
           </p>
           <div className="my-4 flex  items-center justify-center md:justify-start">
 
-          <Link to={`shop/`}>
-            <button className="flex  items-center justify-between w-[12rem]  py-2 px-6   xl:w-[13rem] rounded-xl  transition bg-white shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 ">
-              <span className="block text-[1rem]   text-gray-700  font-bold ">
+          <Link to={`shop`} className='hover:no-underline'>
+            <button className="flex  items-center justify-between w-[12rem]  py-2 px-6  text-[1rem]   text-gray-700  font-bold   xl:w-[13rem] rounded-xl  transition bg-white hover:bg-gray-700 shadow-xl  active:bg-gray-700 focus:bg-gray-600 ">
+            
                 Grab it now
-              </span>
+            
               <BsArrowRightShort className="text-gray-700  h-8 w-8" />
             </button>
           </Link>

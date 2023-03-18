@@ -30,10 +30,10 @@ export const ThankYouPage = () => {
         </div>
         <div className="">
           <div className="mx-2 space-y-2  md:mt-[5rem]">
-            <p className="text-[#234DBB] font-bold">Payment Successful</p>
-            <h2 className="text-4xl font-bold ">Thanks for ordering</h2>
+            <p className="text-[#234DBB] font-bold">Ordered Placed Successful</p>
+            <h2 className="text-4xl font-bold ">Thanks for ordering from us  {orderedItems[0]?.FirstName}</h2>
             <p className=" md:w-[30rem] text-gray-500 font-bold">
-              We appreciate your order,we're currently processing it. So hang
+              We appreciate your order and we're currently processing it. So hang on
               tight and we'll send you a confirmation very soon!
             </p>
           </div>

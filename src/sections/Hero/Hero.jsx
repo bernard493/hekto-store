@@ -11,15 +11,15 @@ export const Hero = () => {
      }
 
   return (
-   <div className="py-13 bg-gray-100 rounded-2xl">
+   <div className="py-13 p-4 bg-gray-100 rounded-2xl">
     <div  className="container m-auto px-6 space-y-8 text-gray-500 md:px-12 lg:p-10">
         <div className="justify-center text-center gap-6 md:text-left md:flex lg:items-center  lg:gap-16">
             <div className="order-last mb-6 space-y-6 md:mb-0 md:w-6/12 lg:w-6/12">
                 <h1 className="text-4xl text-gray-700 font-bold md:text-5xl">Buy now and benefit up to <span className="text-blue-500">{discount}% off</span></h1>
                 <p className="text-lg">Be part of millions people around the world using tailus in modern User Interfaces.</p>
                 <div className="flex flex-row-reverse flex-wrap justify-center gap-4 md:gap-6 md:justify-end">
-                    <Link  to="/hekto-store/shop" type="button" title="Start buying" className="w-full py-3 px-6 text-center rounded-xl transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 sm:w-max">
-                        <span className="block text-white font-semibold">
+                    <Link  to="/shop" type="button" title="Start buying" className="w-full py-3 hover:no-underline px-6 text-center rounded-xl transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 sm:w-max">
+                        <span className="block text-white font-semibold ">
                             Start buying
                         </span>
                     </Link>

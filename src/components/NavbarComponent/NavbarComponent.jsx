@@ -20,7 +20,7 @@ export const NavbarComponent = () => {
   const menuLinks = [
     {
       page: "Shop",
-      path: "hekto-store/shop/",
+      path: "/shop",
       icon: IconOne,
     },
     {
@@ -121,8 +121,8 @@ export const NavbarComponent = () => {
 
   return (
     <>
-      <div className="hidden md:block">
-        <div className="flex items-center justify-between py-[2.5rem]">
+      <div className="hidden shadow-sm mb-[5rem]  bg-slate-50  top-0  md:block">
+        <div className="flex items-center justify-between py-[1rem] px-[2rem] ">
           <div className="">
             <Link to="/hekto-store">
               <img src={logo} alt="" />
@@ -130,7 +130,7 @@ export const NavbarComponent = () => {
           </div>
           <div className=" text-[1rem] font-Poppins font-bold space-x-[1.5rem]">
             {menuLinks.map((link) => (
-              <Link to={link.path} key={link.page}>
+              <Link className="hover:no-underline" to={link.path} key={link.page}>
                 {link.page}
               </Link>
             ))}
@@ -148,7 +148,7 @@ export const NavbarComponent = () => {
             </div>
             <div className=" flex items-center space-x-5">
               <div className="">
-                <Link to="hekto-store/cart">
+                <Link to="cart">
                   <Badge color="green" content={cartItems.length}>
                     <img src={CartIcon} alt="cartIcon" className="h-6 w-6" />
                   </Badge>
@@ -160,8 +160,8 @@ export const NavbarComponent = () => {
         </div>
       </div>
       {/** Moblie Menu */}
-      <div className=" block md:hidden">
-        <div className="flex items-center justify-between py-[1.5rem]">
+      <div className=" block shadow-sm mb-[5rem] bg-slate-50  top-0  md:hidden">
+        <div className="flex items-center justify-between py-[1.5rem] px-[1.5rem]">
           <div className="">
             <Popover className="relative">
               <Popover.Button
@@ -195,7 +195,7 @@ export const NavbarComponent = () => {
           </div>
           <div className=" flex items-center space-x-5">
             <div className="">
-              <Link to="hekto-store/cart">
+              <Link to="cart">
                 <Badge color="green" content={cartItems.length}>
                   <img src={CartIcon} alt="cartIcon" className="h-6 w-6" />
                 </Badge>
@@ -226,7 +226,7 @@ export const NavbarComponent = () => {
                       <Link
                         to={item.path}
                         key={item.page}
-                        className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                        className="-m-3 flex items-center hover:no-underline rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                       >
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
                           <item.icon aria-hidden="true" />

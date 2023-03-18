@@ -3,13 +3,6 @@ import { CartContext } from "../../Hooks/Context/CartContext";
 import { InputNumber } from "rsuite";
 import {MdDeleteForever} from 'react-icons/md'
 
-import {
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
-} from "@chakra-ui/react";
 
 export const CartProduct = ({
   id,
@@ -64,7 +57,7 @@ export const CartProduct = ({
           <div className="">
             <button
               onClick={handelRemoveFromCart}
-              className="flex  items-center  w-[6rem] px-6  border-2 border-gray-600  xl:w-[7rem] rounded-xl  transition bg-white  hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 "
+              className="flex  items-center  w-[6rem] px-6  border-2 border-gray-600 hover:bg-slate-500  xl:w-[7rem] rounded-xl  transition bg-white   "
             >
               <MdDeleteForever className="text-gray-700  h-8 w-8" />
               <span className="block text-[0.7rem]   text-gray-700  font-bold ">

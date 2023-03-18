@@ -5,12 +5,11 @@ import { NavbarComponent, Footer } from "../index";
 export const Layout = () => {
   return (
     <div className="font-Poppins">
+      <NavbarComponent />
       <div className="mx-[1rem] md:mx-[3rem] ">
-        <NavbarComponent />
-        <div>
-          <Routers />
-        </div>
+        <Routers />
       </div>
+
       <Footer />
     </div>
   );

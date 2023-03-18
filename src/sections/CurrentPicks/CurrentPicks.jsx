@@ -42,10 +42,10 @@ const CardComponent = ({ cardImg, path, pathName }) => {
       </div>
       <Link
       
-      to={`shop/`}
+      to={`/shop`}
         type="button"
         title="Start buying"
-        className="w-[8rem] flex justify-center my-2 py-1 px-6 text-center xl:absolute   xl:w-[13rem] rounded-xl xl:top-[12rem] left-9 transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 "
+        className="w-[8rem] flex justify-center hover:no-underline my-2 py-1 px-6 text-center xl:absolute   xl:w-[13rem] rounded-xl xl:top-[12rem] left-9 transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 "
       >
         <button className="flex items-center justify-between ">
           <span className="block text-[0.8rem]  text-white font-semibold">

@@ -5,6 +5,7 @@ import { RadioGroup } from "@headlessui/react";
 import { CartContext } from "../Hooks/Context/CartContext";
 import { useSafeLayoutEffect } from "@chakra-ui/react";
 import { Link, useHistory, useParams } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 import { Loader } from "rsuite";
 
@@ -82,7 +83,16 @@ export const ProductDetails = () => {
       .then((currentProduct) => setProductDetail((prev) => [currentProduct]));
   }, []);
 
+  const addToCartToaster = () => toast.success('Added to Cart Successfully');
 
+
+  const handleAddToCart = (productId) => {
+    addToCart(productId);
+    addToCartToaster()
+  };
+
+
+  
   return (
     <>
       {productDetail.length === 1 ? (
@@ -261,7 +271,7 @@ export const ProductDetails = () => {
                   {/* Sizes */}
 
                   <button
-                    onClick={() => addToCart(productDetail[0].id)}
+                    onClick={(e) => handleAddToCart(productDetail[0].id)}
                     className="mt-10 flex w-full py-3 px-10 items-center  justify-center rounded-md border border-transparent transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 sm:w-max"
                   >
                     <span className="block text-white font-semibold">
@@ -314,6 +324,7 @@ export const ProductDetails = () => {
               </div>
             </div>
           </div>
+          <Toaster position="top-right" reverseOrder={false} />
         </div>
       ) : (
         <Loader content="Loading..." />

@@ -33,13 +33,13 @@ export const Footer = () => {
           <h3 className="text-[1.2rem] font-bold  text-gray-800">SHOP</h3>
           <ul className="space-y-2 text-[1rem]   font-bold md:text-md    text-gray-400 md:text-[0.9rem] ">
             <li>
-              <Link>All Collections</Link>
+              <Link className='hover:no-underline'>All Collections</Link>
             </li>
             <li>
-              <Link>Winter Edition</Link>
+              <Link className='hover:no-underline'>Winter Edition</Link>
             </li>
             <li>
-              <Link>Discount</Link>
+              <Link className='hover:no-underline'>Discount</Link>
             </li>
           </ul>
         </div>
@@ -47,13 +47,13 @@ export const Footer = () => {
           <h3 className="font-bold text-[1.2rem] text-gray-800">COMPANY</h3>
           <ul className="space-y-2 text-[1rem]   font-bold md:text-md    text-gray-400 md:text-[0.9rem] ">
             <li>
-              <Link>About Us</Link>
+              <Link className='hover:no-underline'>About Us</Link>
             </li>
             <li>
-              <Link>Contact</Link>
+              <Link className='hover:no-underline'>Contact</Link>
             </li>
             <li>
-              <Link>Affiliates</Link>
+              <Link className='hover:no-underline'>Affiliates</Link>
             </li>
           </ul>{" "}
         </div>
@@ -61,13 +61,13 @@ export const Footer = () => {
           <h3 className="font-bold text-[1.2rem] text-center  text-gray-800">SUPPORT</h3>
           <ul className="space-y-2 text-[1rem] text-center  md:text-left   font-bold md:text-md    text-gray-400 md:text-[0.9rem] ">
             <li>
-              <Link>FAQs</Link>
+              <Link className='hover:no-underline'>FAQs</Link>
             </li>
             <li>
-              <Link>Cookies Policy</Link>
+              <Link className='hover:no-underline'>Cookies Policy</Link>
             </li>
             <li>
-              <Link>Terms of Use</Link>
+              <Link className='hover:no-underline'>Terms of Use</Link>
             </li>
           </ul>{" "}
         </div>

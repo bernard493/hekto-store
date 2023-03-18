@@ -9,17 +9,16 @@ import { CgProfile } from "react-icons/cg";
 import { MdPayment } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import { v4 as uuid } from "uuid";
-import {  Loader } from "rsuite";
-import {  useNavigate } from "react-router-dom";
+import { Loader } from "rsuite";
+import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 import {
   Input,
   Stack,
   InputGroup,
   InputLeftElement,
   InputRightElement,
-  
   Select,
- 
 } from "@chakra-ui/react";
 
 const plans = [
@@ -91,6 +90,8 @@ export const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState("Card");
   const [processOrder, setProcessOrder] = useState(false);
   const [ordersPlaced, setOrdersPlaced] = useState([]);
+  
+
   const navigate = useNavigate();
 
   // const handleInputChange = (e) => setInput(e.target.value)
@@ -145,10 +146,10 @@ export const Checkout = () => {
     const newOrders = {
       ...orderInformation,
       orderId: generatedOrderId,
-      orderAmount:{
-        totalOrderAmount:totalOrderAmount,
-        taxAmount :tax,
-        subTotal:totalItemPrice
+      orderAmount: {
+        totalOrderAmount: totalOrderAmount,
+        taxAmount: tax,
+        subTotal: totalItemPrice,
       },
       orderStatus: "created",
       shippingMethod: selectedShippingMethod,
@@ -158,13 +159,13 @@ export const Checkout = () => {
     localStorage.setItem("SET_CART_ITEMS", JSON.stringify([]));
   };
 
-  {
-    /** updating database with newOrders */
-  }
+  const addToCartToaster = () => toast.success("Order Placed Successfully");
+
   useMemo(() => {
     if (ordersPlaced.length > 0) {
       localStorage.setItem("ORDER_PLACED", JSON.stringify(ordersPlaced));
-      navigate("hekto-store/Thank-You-Page");
+      addToCartToaster();
+      navigate("/Thank-You-Page");
       setProcessOrder(false);
     }
   }, [ordersPlaced]);
@@ -203,8 +204,10 @@ export const Checkout = () => {
               ))}
             </ul>
           </div>
-          <div className="pt-[1rem]">
-            <h3 className="text-gray-700 font-bold">Available Shipping Method</h3>
+          <div className="my-[1rem]">
+            <h3 className="text-gray-700 font-bold">
+              Available Shipping Method
+            </h3>
             <div className="w-full px-4 ">
               <div className="mx-auto  max-w-md">
                 <RadioGroup
@@ -280,14 +283,14 @@ export const Checkout = () => {
           </div>
         </div>
 
-        <div className="bg-[#F9FAFB] p-[1rem] mb-6  md:mx-[5rem] sm:rounded-md">
+        <div className="bg-[#F9FAFB] p-[1rem] mb-6  md:mx-[5rem]  sm:rounded-md">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="">
               <div className="py-2 space-y-2">
                 <h2 className="text-lg font-bold">Contact Information</h2>
 
                 <Stack spacing={0.8}>
-                <p className="text-md font-bold">Email Address</p>
+                  <p className="text-md font-bold">Email Address</p>
 
                   <InputGroup>
                     <InputLeftElement
@@ -444,7 +447,6 @@ export const Checkout = () => {
                 <Stack spacing={0.5}>
                   <p className="text-md font-bold">Card Number</p>
 
-                  
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -479,7 +481,6 @@ export const Checkout = () => {
                 <Stack spacing={0.5}>
                   <p className="text-md font-bold">Card Holder</p>
 
-                  
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -503,7 +504,7 @@ export const Checkout = () => {
 
                 <p className="text-lg font-bold">Billing Address</p>
                 <Stack spacing={0.5} className="space-y-4">
-                <p className="text-md font-bold">Country</p>
+                  <p className="text-md font-bold">Country</p>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -556,7 +557,7 @@ export const Checkout = () => {
             </div>
             <button
               type="submit"
-              className="flex items-center justify-center font-bold rounded-md border border-transparent bg-indigo-600 px-6 my-5 py-3 text-base  text-white shadow-sm hover:bg-indigo-700"
+              className="flex items-center justify-center font-bold rounded-md border border-transparent bg-gray-700 px-6 my-5 py-3 text-base  text-white shadow-sm hover:bg-gray-500"
             >
               {processOrder ? (
                 <Loader size="sm" content="Placing Order ..." />
@@ -585,6 +586,7 @@ export const Checkout = () => {
           </div>
         </div>
       </div>
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 };

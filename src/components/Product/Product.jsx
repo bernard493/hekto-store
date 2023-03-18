@@ -58,7 +58,7 @@ export const Product = ({
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-between py-3 space-x-2">
+        <div className="flex items-center justify-between pt-3 space-x-2">
           <button
             onClick={handleAddToCart}
             className="w-full py-2 px-3 md:py-2 md:px-6 text-center rounded-xl transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 sm:w-max"
