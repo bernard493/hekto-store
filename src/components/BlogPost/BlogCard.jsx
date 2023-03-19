@@ -25,7 +25,7 @@ export const BlogCard = ({postImg,tittle,text,id}) => {
         <p className="my-3 truncate   text-gray-600 text-bold dark:text-gray-300">
          {text}
         </p>
-        <Link className="inline-block" to={`/blog-detail/${id}`}>
+        <Link className="inline-block" to={`blog-detail/${id}`}>
           <span className="text-primary">Read more</span>
         </Link>
       </div>

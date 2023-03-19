@@ -18,7 +18,7 @@ export const Hero = () => {
                 <h1 className="text-4xl text-gray-700 font-bold md:text-5xl">Buy now and benefit up to <span className="text-blue-500">{discount}% off</span></h1>
                 <p className="text-lg">Be part of millions people around the world using tailus in modern User Interfaces.</p>
                 <div className="flex flex-row-reverse flex-wrap justify-center gap-4 md:gap-6 md:justify-end">
-                    <Link  to="/shop" type="button" title="Start buying" className="w-full py-3 hover:no-underline px-6 text-center rounded-xl transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 sm:w-max">
+                    <Link  to="shop" type="button" title="Start buying" className="w-full py-3 hover:no-underline px-6 text-center rounded-xl transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 sm:w-max">
                         <span className="block text-white font-semibold ">
                             Start buying
                         </span>

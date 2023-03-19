@@ -93,17 +93,7 @@ export const CartPage = () => {
             <p className="text-xl text-gray-700 text-center font-bold md:text-5xl">
               Opps!! shopping Cart is empty{" "}
             </p>
-            <div className="flex justify-center  ">
-              <Link
-                to="/shop"
-              
-                className="w-full py-3 px-6 md:px-10 text-center rounded-xl transition bg-gray-700 shadow-xl hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-600 sm:w-max"
-              >
-                <span className="block text-white font-semibold">
-                  Start Shopping now
-                </span>
-              </Link>
-            </div>
+            
           </div>
 
           <div className=" flex justify-center  rounded-xl">

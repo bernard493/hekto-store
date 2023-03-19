@@ -108,7 +108,7 @@ export const FeaturedProduct = () => {
           <Slider ref={slider} {...settings}>
             {data.map((product) => (
               <div key={product.id} className="px-[1rem] md:px-[2rem] ">
-                <Link to={`/shop/${product.id}`}>
+                <Link to={`shop/${product.id}`}>
                   <div className="rounded-xl relative">
                     <img
                       src={product.images[0]}

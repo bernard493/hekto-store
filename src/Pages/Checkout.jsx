@@ -165,7 +165,7 @@ export const Checkout = () => {
     if (ordersPlaced.length > 0) {
       localStorage.setItem("ORDER_PLACED", JSON.stringify(ordersPlaced));
       addToCartToaster();
-      navigate("/Thank-You-Page");
+      navigate("Thank-You-Page");
       setProcessOrder(false);
     }
   }, [ordersPlaced]);
