@@ -79,7 +79,7 @@ export const CartPage = () => {
                 </p>
               </div>
               <Link
-                to="/checkout"
+                to={"/hekto-store/checkout"}
                 className="flex items-center text-white font-bold justify-center rounded-md border border-transparent hover:no-underline bg-gray-600 px-6 py-3 text-base  shadow-sm hover:bg-gray-700"
               >
                 Checkout

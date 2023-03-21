@@ -23,7 +23,7 @@ export const Product = ({
   };
 
   return (
-    <>
+    
       <div
         key={id}
         className="group p-3 mb-7   rounded-xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 sm:p-8 dark:shadow-none dark:border-gray-700 dark:bg-gray-800"
@@ -75,6 +75,6 @@ export const Product = ({
           </Link>
         </div>
       </div>
-    </>
+
   );
 };

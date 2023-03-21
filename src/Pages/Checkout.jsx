@@ -165,7 +165,7 @@ export const Checkout = () => {
     if (ordersPlaced.length > 0) {
       localStorage.setItem("ORDER_PLACED", JSON.stringify(ordersPlaced));
       addToCartToaster();
-      navigate("Thank-You-Page");
+      navigate("/hekto-store/Thank-You");
       setProcessOrder(false);
     }
   }, [ordersPlaced]);
@@ -184,7 +184,7 @@ export const Checkout = () => {
         <h3 className="text-xl  font-bold">Order Overview</h3>
       </div>
       <div className="space-y-4 md:grid md:grid-cols-2 md:gap-4">
-        <div className="mx-[2rem] md:mx-[5rem]">
+        <div className=" md:mx-[5rem]">
           <div className="p-[1rem]">
             <h2 className="text-lg font-bold">Summary Order</h2>
             <p>Check our items and select shipping for better experience </p>
@@ -205,7 +205,7 @@ export const Checkout = () => {
             </ul>
           </div>
           <div className="my-[1rem]">
-            <h3 className="text-gray-700 font-bold">
+            <h3 className="text-gray-700 font-bold text-lg">
               Available Shipping Method
             </h3>
             <div className="w-full px-4 ">
@@ -263,7 +263,7 @@ export const Checkout = () => {
                               </div>
                               <div className="flex items-center space-x-2">
                                 <p className="text-sm font-bold">
-                                  {plan.price}
+                                  $ {plan.price}
                                 </p>
                                 {checked && (
                                   <div className="shrink-0 text-white">
@@ -581,7 +581,7 @@ export const Checkout = () => {
             </div>
             <div className="flex justify-between items-center border-b-2">
               <p className="font-bold">Order total</p>
-              <p className="font-bold">${totalOrderAmount}</p>
+              <p className="font-bold">$ {totalOrderAmount}</p>
             </div>
           </div>
         </div>

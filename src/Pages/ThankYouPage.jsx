@@ -9,12 +9,10 @@ const getOrders = JSON.parse(localStorage.getItem("ORDER_PLACED"));
 
 export const ThankYouPage = () => {
   const [orderedItems, setOrderedItems] = useState(getOrders);
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState(orderedItems[0].product);
 
-  useEffect(() => {
-    const getProducts = getOrders.map((order) => order.product);
-    setProducts((prev) => getProducts[0]);
-  }, []);
+  
+
 
   const { address, apartment, city, State, ZipCode, FirstName, LastName } = orderedItems[0];
   const { totalOrderAmount, taxAmount, subTotal } = orderedItems[0].orderAmount;
@@ -71,6 +69,9 @@ export const ThankYouPage = () => {
                         <div className="flex items-center justify-between text-sm">
                           <p className="text-[.8rem] font-bold  ">
                             Brand: {product.brand}
+                          </p>
+                          <p className="text-[.8rem] font-bold  ">
+                            Qnt: {product.quantity}
                           </p>
                         </div>
                       </div>
