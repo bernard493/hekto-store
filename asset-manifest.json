@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hekto-store/static/css/main.26993f22.css",
-    "main.js": "/hekto-store/static/js/main.db2ce8b0.js",
+    "main.css": "/hekto-store/static/css/main.a7a2f750.css",
+    "main.js": "/hekto-store/static/js/main.f8cb003c.js",
     "static/media/store-906722_1920.jpg": "/hekto-store/static/media/store-906722_1920.5aa346b72dccab3afcef.jpg",
     "static/media/shopping-mall-1316787_1920.jpg": "/hekto-store/static/media/shopping-mall-1316787_1920.4317ad5afea8341d6827.jpg",
     "static/media/man-1866574_1920.jpg": "/hekto-store/static/media/man-1866574_1920.bc777b17645b64f8c088.jpg",
@@ -10,11 +10,11 @@
     "static/media/revicons.ttf": "/hekto-store/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/hekto-store/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/hekto-store/index.html",
-    "main.26993f22.css.map": "/hekto-store/static/css/main.26993f22.css.map",
-    "main.db2ce8b0.js.map": "/hekto-store/static/js/main.db2ce8b0.js.map"
+    "main.a7a2f750.css.map": "/hekto-store/static/css/main.a7a2f750.css.map",
+    "main.f8cb003c.js.map": "/hekto-store/static/js/main.f8cb003c.js.map"
   },
   "entrypoints": [
-    "static/css/main.26993f22.css",
-    "static/js/main.db2ce8b0.js"
+    "static/css/main.a7a2f750.css",
+    "static/js/main.f8cb003c.js"
   ]
 }
