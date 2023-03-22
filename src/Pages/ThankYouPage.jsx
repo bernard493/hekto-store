@@ -14,7 +14,6 @@ export const ThankYouPage = () => {
   useEffect(() => {
     const getProducts = getOrders.map((order) => order.product);
     setProducts((prev) => getProducts[0]);
-    console.log(getProducts[0])
   }, []);
 
   console.log(orderedItems)
