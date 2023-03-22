@@ -90,7 +90,6 @@ export const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState("Card");
   const [processOrder, setProcessOrder] = useState(false);
   const [ordersPlaced, setOrdersPlaced] = useState([]);
-  
 
   const navigate = useNavigate();
 
@@ -129,7 +128,7 @@ export const Checkout = () => {
   }, [cartItems, tax, totalItemPrice, shippingCost]);
 
   {
-    /** shipping cost ca */
+    /** shipping cost cal */
   }
   const getShippingCost = (shippingMethod) => {
     setSelectedShippingMethod(shippingMethod);
@@ -140,8 +139,10 @@ export const Checkout = () => {
 
   {
     /** Placing Order */
+    /**clear localstorage because past orders in ORDER_PLACED in local still there  so clear and store nre order*/
   }
   const onSubmit = (orderInformation) => {
+    localStorage.clear();
     setProcessOrder(true);
     const newOrders = {
       ...orderInformation,
