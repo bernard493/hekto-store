@@ -162,20 +162,7 @@ export const NavbarComponent = () => {
                       </Link>
                     ))}
                   </div>
-                  <div className="bg-gray-50 p-4">
-                    <div className="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50">
-                      <div className=" flex items-center space-x-6 ">
-                        <input
-                          className="relative text-md text-[#858585] bg-[#fff]  h-[2rem] py-[1.4rem] pl-[4rem] w-[20rem] drop-shadow-md dark:text-[#fff] dark:bg-[#2B3945] rounded-md  "
-                          placeholder="Search "
-                          type="text"
-                          value={search}
-                          onChange={(e) => setSearch(e.target.value)}
-                        />
-                        <BiSearchAlt2 className=" absolute text-2xl text-[#858585] h-5 w-5 " />
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
               </Popover.Panel>
             </Transition>
@@ -192,5 +179,22 @@ export const NavbarComponent = () => {
                       <p  className={ link.active ? "font-bold text-[#FB2E86] border-b-2 border-pink-500" : ''}>{link.display}</p>
                    </Link>
             ))
-          } */
+          } 
+          ---search btn---
+          <div className="bg-gray-50 p-4">
+                    <div className="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50">
+                      <div className=" flex items-center space-x-6 ">
+                        <input
+                          className="relative text-md text-[#858585] bg-[#fff]  h-[2rem] py-[1.4rem] pl-[4rem] w-[20rem] drop-shadow-md dark:text-[#fff] dark:bg-[#2B3945] rounded-md  "
+                          placeholder="Search "
+                          type="text"
+                          value={search}
+                          onChange={(e) => setSearch(e.target.value)}
+                        />
+                        <BiSearchAlt2 className=" absolute text-2xl text-[#858585] h-5 w-5 " />
+                      </div>
+                    </div>
+                  </div>
+          
+          */
 }
